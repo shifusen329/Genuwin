@@ -28,8 +28,25 @@ Genuwin is an Android application that provides an interactive AI companion usin
     ```
 2.  **Setup Live2D SDK**:
     - Download the [Live2D Cubism SDK for Java](https://www.live2d.com/en/sdk/download/cubism/).
-    - Copy the `CubismJavaSamples` directory to the project root.
-    - Ensure the `Framework` and `Core` directories are properly linked.
+    - Extract the downloaded SDK.
+    - **IMPORTANT**: Copy the entire `CubismJavaSamples` directory to the **parent directory** of your Genuwin project.
+    
+    Your directory structure should look like this:
+    ```
+    parent-directory/
+    ├── Genuwin/                    # This repository
+    │   ├── src/
+    │   ├── build.gradle
+    │   └── settings.gradle
+    └── CubismJavaSamples/          # Live2D SDK (place here)
+        ├── Framework/
+        │   └── framework/
+        └── Core/
+            └── android/
+                └── Live2DCubismCore.aar
+    ```
+    
+    The build system expects `CubismJavaSamples` to be in the parent directory of the Genuwin project, not inside it.
 3.  **Configure API Endpoints**:
     - Copy `src/main/assets/config.properties.template` to `src/main/assets/config.properties`.
     - Edit `src/main/assets/config.properties` with your server URLs or your OpenAI API key.
