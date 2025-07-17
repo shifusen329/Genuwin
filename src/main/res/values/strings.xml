@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Genuwin</string>
+    <string name="voice_chat">Voice Chat</string>
+    <string name="text_chat">Text Chat</string>
+    <string name="stop_listening">Stop Listening</string>
+    <string name="initializing">Initializing...</string>
+    <string name="ready_to_chat">Ready to chat!</string>
+    <string name="listening">Listening...</string>
+    <string name="processing">Processing...</string>
+    <string name="thinking">Thinking...</string>
+    <string name="speaking">Speaking...</string>
+    <string name="permissions_required">Permissions required for voice features</string>
+    <string name="audio_permission_required">Audio permission required</string>
+    <string name="text_input_coming_soon">Text input coming soon!</string>
+</resources>

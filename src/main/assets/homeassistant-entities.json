@@ -1,0 +1,34 @@
+{
+  "bedroom_lights": [
+    "light.wiz_rgbw_tunable_b6f8d5",
+    "light.wiz_rgbw_tunable_862676"
+  ],
+  "livingroom_lights": [
+    "light.living_room_1",
+    "light.living_room_2",
+    "light.living_room_3",
+    "light.living_room_4"
+  ],
+  "office_lights": [
+    "light.smart_light_rgbcw_wifi_3",
+    "light.smart_light_rgbcw_wifi",
+    "light.smart_light_rgbcw_wifi_2"
+  ],
+  "studio_lights": [
+    "light.wiz_dimmable_white_ea8e82",
+    "light.wiz_dimmable_white_ea91a2",
+    "light.wiz_dimmable_white_ea9534"
+  ],
+  "kitchen_lights": [
+    "light.wiz_rgbw_tunable_47c2fa",
+    "light.wiz_rgbw_tunable_4835da",
+    "light.wiz_rgbw_tunable_4836d4",
+    "light.wiz_rgbw_tunable_484b72"
+  ],
+  "thermostat": [
+    "climate.hallway"
+  ],
+  "temperature_sensor": [
+    "sensor.hallway_temperature"
+  ]
+}

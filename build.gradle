@@ -1,0 +1,112 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.11.0'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+android {
+    namespace = "com.genuwin.app"
+    compileSdk = PROP_COMPILE_SDK_VERSION.toInteger()
+
+    defaultConfig {
+        applicationId "com.genuwin.app"
+        minSdkVersion PROP_MIN_SDK_VERSION
+        targetSdkVersion PROP_TARGET_SDK_VERSION
+    versionCode 5
+    versionName "0.1.3-beta"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            ndk {
+                abiFilters = []
+                abiFilters.addAll(PROP_APP_ABI.split(':').collect { it as String })
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+    }
+
+
+    buildFeatures {
+        viewBinding = true
+    }
+    
+    lint {
+        abortOnError = false
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // HTTP client for API calls
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    
+    // JSON parsing
+    implementation 'com.google.code.gson:gson:2.10.1'
+    
+    // Audio recording and playback
+    implementation 'androidx.media:media:1.6.0'
+    
+    // Permissions
+    implementation 'androidx.activity:activity:1.8.0'
+    implementation 'androidx.fragment:fragment:1.6.1'
+    
+    // RecyclerView for settings lists
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    
+    // Live2D dependencies - using the same approach as CubismJavaSamples
+    implementation project(":framework")
+    implementation(fileTree(dir: '../CubismJavaSamples/Core/android', include: ['Live2DCubismCore.aar']))
+
+    // Wake word detection
+    implementation 'org.tensorflow:tensorflow-lite:2.14.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
+
+    // MediaPipe for text embeddings (Memory System)
+    implementation 'com.google.mediapipe:tasks-text:0.10.21'
+
+    // Room for database (Memory System)
+    implementation 'androidx.room:room-runtime:2.5.0'
+    implementation 'androidx.room:room-ktx:2.5.0'
+    annotationProcessor 'androidx.room:room-compiler:2.5.0'
+
+    // Vector operations (if needed beyond MediaPipe utilities)
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+
+    // CameraX for AR functionality
+    implementation 'androidx.camera:camera-core:1.3.1'
+    implementation 'androidx.camera:camera-camera2:1.3.1'
+    implementation 'androidx.camera:camera-lifecycle:1.3.1'
+    implementation 'androidx.camera:camera-view:1.3.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

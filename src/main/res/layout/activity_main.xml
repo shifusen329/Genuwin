@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <!-- Camera preview for AR mode (background layer) -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- OpenGL Surface View for Live2D model (overlay layer) -->
+    <android.opengl.GLSurfaceView
+        android:id="@+id/gl_surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Status text overlay -->
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#80000000"
+        android:padding="16dp"
+        android:text="Initializing..."
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:maxLines="3"
+        android:ellipsize="end" />
+
+    <!-- AR Mode State Indicator (floating visual cue) -->
+    <TextView
+        android:id="@+id/ar_state_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="#CC000000"
+        android:padding="12dp"
+        android:text="●"
+        android:textColor="#00FF00"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:alpha="0.8" />
+
+    <!-- Top controls container -->
+    <LinearLayout
+        android:id="@+id/top_ui_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Settings button at top left -->
+        <ImageButton
+            android:id="@+id/settings_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_settings"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Settings"
+            android:scaleType="centerInside"
+            android:padding="12dp"
+            android:tint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/reload_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_cached"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Reload Model"
+            android:scaleType="centerInside"
+            android:padding="12dp"
+            android:tint="#FFFFFF" />
+
+        <!-- Spacer -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- AR toggle button -->
+        <Button
+            android:id="@+id/ar_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="AR"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:background="#80333333"
+            android:padding="12dp"
+            android:minWidth="60dp"
+            android:gravity="center" />
+
+        <!-- Character switch button at top right -->
+        <Button
+            android:id="@+id/character_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch Character"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:background="#80333333"
+            android:padding="12dp"
+            android:minWidth="120dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Control buttons at bottom -->
+    <LinearLayout
+        android:id="@+id/bottom_ui_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:fitsSystemWindows="true">
+
+        <Button
+            android:id="@+id/voice_button"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="12dp"
+            android:text="VOICE CHAT"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_voice"
+            android:drawableTop="@drawable/ic_mic"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:elevation="4dp"
+            android:maxLines="2"
+            android:lineSpacingExtra="2dp" />
+
+        <Button
+            android:id="@+id/text_button"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="TEXT CHAT"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_text"
+            android:drawableTop="@drawable/ic_text"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:elevation="4dp"
+            android:maxLines="2"
+            android:lineSpacingExtra="2dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

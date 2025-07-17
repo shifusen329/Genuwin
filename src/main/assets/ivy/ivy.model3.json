@@ -1,0 +1,28 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "ivy.moc3",
+		"Textures": [
+			"ivy.4096/texture_00.png"
+		],
+		"Physics": "ivy.physics3.json",
+		"DisplayInfo": "ivy.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": ["ParamMouthOpenY"]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": ["ParamEyeLOpen", "ParamEyeROpen"]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "VoiceControl",
+			"Ids": ["Param4", "Param5", "ParamCheek"]
+		}
+	]
+}

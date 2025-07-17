@@ -1,0 +1,76 @@
+# Genuwin AI Waifu Configuration
+# Copy this file to config.properties and fill in your details.
+
+# Home Assistant Configuration
+BASE_URL=http://localhost:8123
+API_KEY=your_home_assistant_token_here
+
+# OpenAI API Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+
+# LiteLLM API Configuration
+LITELLM_API_KEY=your_litellm_api_key_here
+
+# Audio API Configuration (for gofigstudios.com services)
+AUDIO_API_KEY=your_audio_api_key_here
+
+# SearXNG Configuration
+SEARXNG_BASE_URL=https://your-searxng-instance.com/
+
+# MCP Tool Endpoints Configuration
+WIKIPEDIA_BASE_URL=https://your-mcp-server.com/wikipedia
+GOOGLE_DRIVE_BASE_URL=https://your-mcp-server.com/gdrive
+GOOGLE_CALENDAR_BASE_URL=https://your-mcp-server.com/google-calendar
+
+# Google API Configuration
+GOOGLE_API_KEY=your_google_api_key_here
+
+# Google Custom Search Engine ID
+GOOGLE_CSE_ID=your_google_cse_id_here
+
+# Firecrawl API Key
+FIRECRAWL_API_KEY=your_firecrawl_api_key_here
+
+# Application Settings
+enabled_tools=SearchTool,WeatherTool,HomeAssistantTool,TemperatureTool,WikipediaTool,GoogleDriveTool,GoogleCalendarTool
+enabled_models=Haru
+tts_provider=Google
+google_tts_language_code=en-US
+google_tts_voice_name=en-US-Chirp3-HD-Despina
+
+# API Provider Settings (can be overridden in app settings)
+api_provider=OpenAI
+ollama_base_url=http://10.0.2.2:11434
+ollama_model=llama3
+openai_model=gpt-4o
+tts_base_url=https://api.openai.com/v1/
+tts_model=tts-1
+tts_voice=alloy
+stt_base_url=https://api.openai.com/v1/
+stt_model=whisper-1
+home_assistant_url=http://localhost:8123
+home_assistant_token=your_home_assistant_token_here
+
+# Character and Wake Word Settings
+default_character=becca_vts
+wake_word_enabled=true
+wake_word_sensitivity=0.5
+
+# Audio Settings
+vad_silence_threshold=300
+vad_min_silence_duration=1000
+mic_sensitivity=1.0
+speaker_volume=1.0
+
+# Visual Settings
+animation_speed=1.0
+touch_sensitivity=1.0
+ui_theme=dark
+fullscreen_mode=true
+full_body_view=false
+
+# Advanced Settings
+debug_logging=false
+performance_mode=balanced
+connection_timeout=30
+read_timeout=60

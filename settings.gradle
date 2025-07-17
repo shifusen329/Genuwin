@@ -1,0 +1,11 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "Genuwin"
+include ':framework'
+project(':framework').projectDir = new File(rootProject.projectDir.parent, 'CubismJavaSamples/Framework/framework')

@@ -1,0 +1,60 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Beartz7.moc3",
+		"Textures": [
+			"Beartz7.4096/texture_00.png"
+		],
+		"Physics": "Beartz7.physics3.json",
+		"DisplayInfo": "Beartz7.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		}
+	],
+	"Motions": {
+		"Idle": [
+			{
+				"File": "Idle.motion3.json"
+			}
+		],
+		"TapBody": [
+			{
+				"File": "TapBody.motion3.json"
+			}
+		],
+		"TapHead": [
+			{
+				"File": "TapHead.motion3.json"
+			}
+		],
+		"SwipeHead": [
+			{
+				"File": "SwipeHead.motion3.json"
+			}
+		]
+	},
+	"Expressions": [
+		{
+			"Name": "Happy",
+			"File": "Happy.exp3.json"
+		},
+		{
+			"Name": "Sad",
+			"File": "Sad.exp3.json"
+		}
+	]
+}
