@@ -2,6 +2,8 @@
 
 Genuwin is an Android application that provides an interactive AI companion using Live2D animation. It integrates with Ollama for AI chat, and OpenAI-compatible APIs for Text-to-Speech (TTS) and Speech-to-Text (STT). *Your data. Your rules. Genuinely.*
 
+[![Nova Demo](https://www.gofigstudios.com/wp-content/uploads/2025/07/TabTip_FmjACkxX4A.png)(https://www.gofigstudios.com/wp-content/uploads/2025/07/nova.mp4)
+
 ## Key Features
 
 - **Live2D Animation**: Interactive 2D character animation.
